@@ -17,16 +17,16 @@ class HttpInterceptor {
     }
 
     request(config) {
-        var canceller;
-        if (config.url.search(self.configService.apiBase) !== -1 && self.authService.isAuthenticated()) {
-            config.headers.Authorization = `Token ${self.authService.getCredentials().token}`;
-        } else if (config.url.search(self.configService.apiBase) !== -1 && config.url !== self.API_LOGIN_URL) {
-            canceller = self.$q.defer();
-            config.timeout = canceller.promise;
-            canceller.resolve(`Cancelled request to ${config.url} because we do not have credentials`);
-            self.authService.cleanCredentials();
-            self.$location.url('/login');
-        }
+        // var canceller;
+        // if (config.url.search(self.configService.apiBase) !== -1 && self.authService.isAuthenticated()) {
+        //     config.headers.Authorization = `Token ${self.authService.getCredentials().token}`;
+        // } else if (config.url.search(self.configService.apiBase) !== -1 && config.url !== self.API_LOGIN_URL) {
+        //     canceller = self.$q.defer();
+        //     config.timeout = canceller.promise;
+        //     canceller.resolve(`Cancelled request to ${config.url} because we do not have credentials`);
+        //     self.authService.cleanCredentials();
+        //     self.$location.url('/login');
+        // }
         return config;
     }
 

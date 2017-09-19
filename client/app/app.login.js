@@ -24,12 +24,13 @@ class LoginService {
     login(username, password) {
         /*jshint camelcase: false */
         this.authService.cleanCredentials();
-        return this.$http.get(`${this.configService.apiBase}`)
-            .success(data => {
-                this.authService.setCredentials(data.token);
-                this.signalsService.emit('renooit:login', username);
-            })
-            .catch(error => this.$q.reject(error.data.non_field_errors[0]));
+        var xhr = this.$http.get(`${this.configService.apiBase}`);
+        xhr.success(data => {
+            this.authService.setCredentials(data.token);
+            this.signalsService.emit('renooit:login', username);
+        });
+        xhr.catch(error => this.$q.reject(error.data.non_field_errors[0]));
+        return xhr;
     }
 
     logout() {
