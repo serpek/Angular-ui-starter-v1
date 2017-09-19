@@ -18,7 +18,7 @@ const baseConfig = {
                 enforce: "pre",
                 test: /\.js$/,
                 exclude: /node_modules/,
-                loader: "eslint-loader",
+                loader: "eslint-loader"
             },
             {
                 test: /\.js$/,
