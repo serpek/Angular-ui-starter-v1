@@ -1,10 +1,10 @@
 const webpack = require("webpack");
 const path = require("path");
-const config = require("./webpack.config");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const ProgressBarPlugin = require('progress-bar-webpack-plugin');
 
+const config = require("./webpack.config");
 // VENDOR
 let vendor = {
     name: "vendor",

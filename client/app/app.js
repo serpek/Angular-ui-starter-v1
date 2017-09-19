@@ -4,6 +4,9 @@ import Common from './common/common';
 import Components from './components/components';
 import AppComponent from './app.component';
 import httpInterceptor from './interceptor';
+import AuthService from './app.auth';
+import ConfigService from './app.config';
+import LoginService from './app.login';
 
 angular.module('app', [
         'ngSanitize',
@@ -20,7 +23,13 @@ angular.module('app', [
         "softwareCode": "APPSTARTER",
         "idleTime": 14 * 60
     })
-    .run(function($timeout, $rootScope, blockUI) {
+    .service('AuthService', AuthService)
+    .service('LoginService', LoginService)
+    .value('ConfigService', ConfigService)
+    .run(function($timeout, $rootScope, blockUI, LoginService) {
+        console.log("App => run");
+
+        LoginService.login("a", "b");
 
         // Use a root scope flag to access everywhere in your app
         $rootScope.isLoading = true;
@@ -39,6 +48,7 @@ angular.module('app', [
 
     })
     .config(($urlRouterProvider, $locationProvider, $stateProvider, $httpProvider) => {
+        console.log("App => config");
         // "ngInject";
         $httpProvider.interceptors.push(httpInterceptor);
         // @see: https://github.com/angular-ui/ui-router/wiki/Frequently-Asked-Questions

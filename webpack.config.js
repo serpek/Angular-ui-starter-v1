@@ -4,14 +4,10 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 const baseConfig = {
     outputPath: '/dist',
-    devtool: "source-map",
     resolve: {
         modules: ['node_modules', 'client'],
         extensions: ['.js', '.json', '.css', '.scss'],
         descriptionFiles: ['package.json'],
-    },
-    eslint: {
-        configFile: './.eslintrc'
     },
     module: {
         rules: [{
