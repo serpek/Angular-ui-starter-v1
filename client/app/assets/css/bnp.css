@@ -1,0 +1,655 @@
+body {
+    background: #FFF;
+    color: #1d1d1b;
+    position: relative;
+    font-family: 'BNPSans', Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+    -webkit-font-smoothing: antialiased;
+    -webkit-overflow-scrolling: touch;
+}
+
+@media (min-width: 992px) {
+    body {
+        padding-top: 0;
+    }
+}
+
+.wrapper {
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 960px;
+}
+
+.cta {
+    background-color: #fff;
+    color: #1d1d1b;
+    display: inline-block;
+    padding: 5px 20px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    font-family: 'BNPSansCondensed', Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 30px;
+    -webkit-transition: background-color 0.2s ease;
+    -moz-transition: background-color 0.2s ease;
+    -ms-transition: background-color 0.2s ease;
+    -o-transition: background-color 0.2s ease;
+    transition: background-color 0.2s ease;
+}
+
+.cta:hover {
+    background-color: #f2f2f2;
+    color: #1d1d1b;
+}
+
+.brandbar {
+    background-color: #15925f;
+    height: 38px;
+}
+
+.brandbar .container,
+.brandbar .main-nav a,
+.main-nav .brandbar a {
+    position: relative;
+}
+
+.brandbar .brandbar-info {
+    color: #000;
+    margin: 0 0 0 16px;
+    position: relative;
+    text-transform: uppercase;
+    top: 2px;
+    font-family: 'BNPRounded', Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 38px;
+}
+
+.brandbar .brandbar-info strong {
+    color: #bfe5d7;
+    margin: 0 0 0 5px;
+}
+
+.brandbar .brandbar-textsize,
+.brandbar .brandbar-nav {
+    float: left;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.brandbar .brandbar-textsize li,
+.brandbar .brandbar-nav li {
+    float: left;
+}
+
+.brandbar .brandbar-textsize a,
+.brandbar .brandbar-nav a {
+    color: #fff;
+    margin: 0;
+    padding: 0 10px;
+    position: relative;
+    text-decoration: none;
+    text-transform: uppercase;
+    top: 2px;
+    font-family: 'BNPRounded', Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 38px;
+}
+
+.brandbar .brandbar-textsize {
+    border-left: 1px solid #008754;
+}
+
+.brandbar .brandbar-textsize li {
+    border-right: 1px solid #008754;
+}
+
+.topbar {
+    background-color: #fff;
+    border-top: 2px solid #15925f;
+    left: 0;
+    position: fixed;
+    top: 0;
+    z-index: 20;
+    height: 44px;
+    width: 100%;
+}
+
+@media (min-width: 992px) {
+    .topbar {
+        left: auto;
+        padding: 25px 0;
+        position: static;
+        top: auto;
+        height: auto;
+        width: 100%;
+    }
+}
+
+.topbar .container,
+.topbar .main-nav a,
+.main-nav .topbar a {
+    position: relative;
+}
+
+.topbar .core-feat {
+    height: 34px;
+    width: 100%;
+}
+
+.main-logo {
+    float: left;
+    margin: 0 0 0 16px;
+}
+
+@media (max-width: 450px) {
+    .main-logo.has-sitename .site-name {
+        border-left: none;
+        display: none;
+        margin-left: 0;
+        padding-left: 0;
+    }
+}
+
+.main-logo a {
+    background: transparent url(../img/bnpp-logo-mobile.png) 0 0 no-repeat;
+    display: block;
+    float: left;
+    margin: 0;
+    position: relative;
+    top: 7px;
+    font: 0/0 a;
+    color: transparent;
+    text-shadow: none;
+    background-color: transparent;
+    border: 0;
+    height: 30px;
+    width: 144px;
+}
+
+@media (min--moz-device-pixel-ratio: 1.3),
+(-o-min-device-pixel-ratio: 2.6 / 2),
+(-webkit-min-device-pixel-ratio: 1.3),
+(min-device-pixel-ratio: 1.3),
+(min-resolution: 1.3dppx) {
+    .main-logo a {
+        /* on retina, use image that's scaled by 2 */
+        background-image: ("../img/bnpp-logo-mobile@2x.png");
+        background-size: 144px 30px;
+    }
+}
+
+@media (min-width: 992px) {
+    .main-logo a {
+        background: transparent url(../img/bnpp-logo.png) 0 0 no-repeat;
+        float: left;
+        position: relative;
+        top: auto;
+        height: 34px;
+        width: 166px;
+    }
+}
+
+@media (min-width: 992px) and (min--moz-device-pixel-ratio: 1.3),
+(min-width: 992px) and (-o-min-device-pixel-ratio: 2.6 / 2),
+(min-width: 992px) and (-webkit-min-device-pixel-ratio: 1.3),
+(min-width: 992px) and (min-device-pixel-ratio: 1.3),
+(min-width: 992px) and (min-resolution: 1.3dppx) {
+    .main-logo a {
+        /* on retina, use image that's scaled by 2 */
+        background-image: ("../img/bnpp-logo@2x.png");
+        background-size: 485px 71px;
+    }
+}
+
+.main-logo .site-name {
+    border-left: 1px solid #60605f;
+    color: #60605f;
+    float: left;
+    margin: 8px 0 0 6px;
+    padding-left: 6px;
+    position: relative;
+    text-transform: uppercase;
+    top: 8px;
+    font-family: 'BNPSans', Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 16px;
+}
+
+@media (min-width: 992px) {
+    .main-logo .site-name {
+        top: 2px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .main-logo .site-name {
+        margin: 8px 0 0 12px;
+        padding-left: 12px;
+    }
+}
+
+.main-logo .baseline {
+    display: none;
+    float: left;
+    margin: 8px 0 0 17px;
+    position: relative;
+    top: 2px;
+    font-family: 'BNPSans', Arial, Helvetica, sans-serif;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 16px;
+}
+
+@media (min-width: 992px) {
+    .main-logo .baseline {
+        display: block;
+    }
+}
+
+@media (min-width: 1200px) {
+    .main-logo .baseline {
+        margin: 8px 0 0 32px;
+    }
+}
+
+.menu-toggle {
+    font: 0/0 a;
+    color: transparent;
+    text-shadow: none;
+    background-color: transparent;
+    border: 0;
+    background-color: #15925f;
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 42px;
+    width: 42px;
+}
+
+.menu-toggle span {
+    background-color: #fff;
+    left: 50%;
+    margin: -2px 0 0 -12px;
+    position: absolute;
+    top: 50%;
+    height: 3px;
+    width: 24px;
+}
+
+.menu-toggle:before,
+.menu-toggle:after {
+    background-color: #fff;
+    content: '';
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    height: 3px;
+    width: 24px;
+}
+
+.menu-toggle:before {
+    margin: -10px 0 0 -12px;
+}
+
+.menu-toggle:after {
+    margin: 6px 0 0 -12px;
+}
+
+.main-nav {
+    background-color: #dfdddc;
+    display: none;
+    position: fixed;
+    top: 44px;
+    width: 100%;
+    z-index: 10;
+}
+
+.main-nav.open {
+    display: block;
+}
+
+@media (max-width: 991px) {
+    .main-nav .main-nav-container {
+        padding: 0;
+        width: 100%;
+    }
+}
+
+.main-nav li {
+    border-bottom: 1px solid #eee;
+}
+
+.main-nav li.mobile {
+    background-color: #15925f;
+    border-bottom: 1px solid #008754;
+}
+
+@media (min-width: 992px) {
+    .main-nav li.mobile {
+        display: none;
+    }
+}
+
+.main-nav li.mobile a {
+    color: #fff;
+}
+
+.main-nav a {
+    color: #000;
+    display: block;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: 'BNPRounded', Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 40px;
+}
+
+.main-nav .homepage-button {
+    display: none;
+}
+
+@media (min-width: 992px) {
+    .main-nav {
+        background-color: #f3f3f3;
+        display: block;
+        padding: 0 15px;
+        position: relative;
+        top: auto;
+        height: 50px;
+        width: auto;
+    }
+    .main-nav ul {
+        float: left;
+    }
+    .main-nav li {
+        border: none;
+        border-left: 1px solid #cecccb;
+        float: left;
+        margin: 0;
+        padding: 0;
+    }
+    .main-nav a {
+        color: #1d1d1b;
+        padding: 15px 12px;
+        text-decoration: none;
+        text-transform: uppercase;
+        width: auto;
+        font-family: 'BNPRounded', Arial, Helvetica, sans-serif;
+        font-size: 10px;
+        font-weight: 400;
+        line-height: 20px;
+        -webkit-transition: opacity 0.2s ease;
+        -moz-transition: opacity 0.2s ease;
+        -ms-transition: opacity 0.2s ease;
+        -o-transition: opacity 0.2s ease;
+        transition: opacity 0.2s ease;
+    }
+    .main-nav a:hover {
+        opacity: 0.8;
+        -ms-filter: alpha(opacity=80);
+        filter: alpha(opacity=80);
+    }
+    .main-nav .homepage-button {
+        display: block;
+    }
+    .main-nav .homepage-button a {
+        background: transparent url(../img/bnpp-home.png) 50% 50% no-repeat;
+        display: block;
+        padding: 15px 15px;
+        font: 0/0 a;
+        color: transparent;
+        text-shadow: none;
+        background-color: transparent;
+        border: 0;
+        height: 50px;
+        width: 54px;
+    }
+}
+
+@media (min-width: 992px) and (min--moz-device-pixel-ratio: 1.3),
+(min-width: 992px) and (-o-min-device-pixel-ratio: 2.6 / 2),
+(min-width: 992px) and (-webkit-min-device-pixel-ratio: 1.3),
+(min-width: 992px) and (min-device-pixel-ratio: 1.3),
+(min-width: 992px) and (min-resolution: 1.3dppx) {
+    .main-nav .homepage-button a {
+        /* on retina, use image that's scaled by 2 */
+        background-image: ("../img/bnpp-home@2x.png");
+        background-size: 20px 20px;
+    }
+}
+
+.core-feat-ctn {
+    background-color: #fff;
+    padding: 20px;
+}
+
+.core-feat {
+    background-color: #e9e9e9;
+    position: relative;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    height: 34px;
+    width: auto;
+}
+
+.core-feat span {
+    left: 0;
+    margin-top: -10px;
+    position: absolute;
+    text-transform: uppercase;
+    right: 0;
+    text-align: center;
+    top: 50%;
+    font-family: 'BNPRounded', Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+.switch {
+    padding: 20px 0;
+}
+
+.switch a {
+    color: #fff;
+    display: block;
+    text-decoration: none;
+    font-family: 'BNPRounded', Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+.switch a:hover {
+    text-decoration: underline;
+}
+
+main {
+    min-height: 400px;
+}
+
+.page-header {
+    background-color: rgba(0, 0, 0, 0.5);
+    background-image: url(../img/bnpp-tmp-header.jpg);
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    height: 300px;
+    width: 100%;
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/bnpp-tmp-header.jpg', sizingMethod='scale');
+    -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/bnpp-tmp-header.jpg', sizingMethod='scale')";
+}
+
+@media (min-width: 992px) {
+    .page-header {
+        height: 370px;
+    }
+}
+
+.page-header .container,
+.page-header .main-nav a,
+.main-nav .page-header a,
+.page-header .row {
+    height: 100%;
+    padding: 0;
+    position: relative;
+}
+
+@media (min-width: 992px) {
+    .page-header .container,
+    .page-header .main-nav a,
+    .main-nav .page-header a,
+    .page-header .row {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+.page-header .greenbox-ctn {
+    height: 100%;
+    position: relative;
+}
+
+.page-header .greenbox {
+    background-color: #15925f;
+    bottom: 0;
+    color: #fff;
+    left: 20px;
+    padding: 20px;
+    position: absolute;
+    right: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 18px;
+}
+
+@media (min-width: 992px) {
+    .page-header .greenbox {
+        padding: 30px;
+    }
+}
+
+.page-header .greenbox .greenbox-title {
+    margin: 0 0 10px;
+    text-transform: uppercase;
+    font-family: 'BNPSansCondensed', Arial, Helvetica, sans-serif;
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 34px;
+}
+
+.page-header .greenbox p {
+    margin: 0 0 10px;
+}
+
+.page-header .greenbox .cta {
+    display: block;
+    padding: 5px 10px;
+}
+
+@media (min-width: 992px) {
+    .page-header .greenbox .cta {
+        display: inline-block;
+        padding: 5px 20px;
+    }
+}
+
+.meta-footer {
+    background-color: #fff;
+    border-top: 2px solid #15925f;
+    display: none;
+    height: 48px;
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .meta-footer {
+        display: block;
+    }
+}
+
+.meta-footer .footer-baseline {
+    position: relative;
+    font-family: 'BNPSans', Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 48px;
+}
+
+.meta-footer .footer-baseline .footer-logo {
+    background: transparent url(../img/bnpp-logo-footer.png) 0 0 no-repeat;
+    float: left;
+    margin: 0 24px 0 0;
+    position: relative;
+    top: 7px;
+    height: 28px;
+    width: 136px;
+}
+
+@media (min--moz-device-pixel-ratio: 1.3),
+(-o-min-device-pixel-ratio: 2.6 / 2),
+(-webkit-min-device-pixel-ratio: 1.3),
+(min-device-pixel-ratio: 1.3),
+(min-resolution: 1.3dppx) {
+    .meta-footer .footer-baseline .footer-logo {
+        /* on retina, use image that's scaled by 2 */
+        background-image: ("../img/bnpp-logo-footer@2x.png");
+        background-size: 136px 28px;
+    }
+}
+
+.meta-footer .footer-list {
+    list-style: none;
+    margin: 0;
+    padding: 16px 0;
+    font-family: 'BNPRounded', Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 14px;
+}
+
+.meta-footer .footer-list li {
+    border-left: 1px solid #1d1d1b;
+    float: left;
+    padding: 0 5px;
+}
+
+.meta-footer .footer-list li:first-child {
+    border-left: none;
+}
+
+.meta-footer .footer-list a {
+    color: #1d1d1b;
+    text-decoration: none;
+}
+
+.meta-footer .footer-list a:hover {
+    text-decoration: underline;
+}
+
+
+/***********************************************
+* MEDIA QUERIES                *
+***********************************************/
+
+@media (min-width: 992px) {
+    .menu-toggle {
+        display: none;
+    }
+}
