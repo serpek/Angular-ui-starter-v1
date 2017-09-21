@@ -1,14 +1,17 @@
 import Singleton from '../../models/Singleton';
 
-class HomeController {
+class DashboardController {
 
-    constructor($scope, $http, $q) {
-        //console.log("HomeController");
+    constructor($scope, $http, $q, AuthService) {
         this.name = "Deneme";
 
         this.$scope = $scope;
         this.$http = $http;
         this.$q = $q;
+
+        this.AuthService = AuthService;
+        // let self;
+        // self = this;
 
         var orders = new DevExpress.data.CustomStore({
             load: function(loadOptions) {
@@ -69,11 +72,15 @@ class HomeController {
                 }
             ]
         };
-
+        console.log("getCredentials: =>  1", this.AuthService.getCredentials());
     }
 
+    getCredential() {
+
+        console.log("getCredentials: =>  2", this.AuthService.getCredentials());
+    }
 }
 
-HomeController.$inject = ['$scope', '$http', '$q'];
+DashboardController.$inject = ['$scope', '$http', '$q', 'AuthService'];
 
-export default HomeController;
+export default DashboardController;

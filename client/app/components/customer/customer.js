@@ -3,10 +3,8 @@ import customerComponent from './customer.component';
 let customerModule = angular.module('customer', [
         'ui.router'
     ])
-    .config(($stateProvider, $urlRouterProvider) => {
-        // "ngInject";
-
-        $urlRouterProvider.otherwise('/');
+    .config(($stateProvider) => {
+        "ngInject";
 
         $stateProvider
             .state('customer', {

@@ -3,10 +3,9 @@ import targetComponent from './target.component';
 let targetModule = angular.module('target', [
         'ui.router'
     ])
-    .config(($stateProvider, $urlRouterProvider) => {
-        // "ngInject";
+    .config(($stateProvider) => {
+        "ngInject";
 
-        $urlRouterProvider.otherwise('/');
 
         $stateProvider
             .state('target', {

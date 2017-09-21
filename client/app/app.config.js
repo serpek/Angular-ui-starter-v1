@@ -1,7 +1,7 @@
 'use strict';
 
 var ConfigService = {
-    apiBase: 'http://jsonplaceholder.typicode.com/posts'
+    apiBase: 'https://reqres.in/api'
 };
 
 export default ConfigService;

@@ -3,10 +3,8 @@ import riskComponent from './risk.component';
 let riskModule = angular.module('risk', [
         'ui.router'
     ])
-    .config(($stateProvider, $urlRouterProvider) => {
-        // "ngInject";
-
-        $urlRouterProvider.otherwise('/');
+    .config(($stateProvider) => {
+        "ngInject";
 
         $stateProvider
             .state('risk', {

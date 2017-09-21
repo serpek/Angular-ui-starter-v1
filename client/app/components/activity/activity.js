@@ -3,10 +3,8 @@ import activityComponent from './activity.component';
 let activityModule = angular.module('activity', [
         'ui.router'
     ])
-    .config(($stateProvider, $urlRouterProvider) => {
+    .config(($stateProvider) => {
         "ngInject";
-
-        $urlRouterProvider.otherwise('/');
 
         $stateProvider
             .state('activity', {

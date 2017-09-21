@@ -8,7 +8,7 @@ const config = require("./webpack.config");
 // VENDOR
 let vendor = {
     name: "vendor",
-    entry: ["angular", "jquery", "oclazyload", "bootstrap", "@uirouter/angularjs", 'angular-sanitize', 'angular-block-ui'],
+    entry: ["angular", "jquery", "oclazyload", "bootstrap", "@uirouter/angularjs", '@uirouter/angularjs/lib/legacy/stateEvents.js', 'angular-sanitize', 'angular-block-ui'],
     output: {
         path: path.join(__dirname, config.outputPath),
         publicPath: '/',

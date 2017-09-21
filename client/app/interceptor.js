@@ -11,41 +11,43 @@ class HttpInterceptor {
         this.configService = ConfigService;
         this.authService = AuthService;
 
-        this.API_LOGIN_URL = '/login/';
+        this.API_LOGIN_URL = `${ConfigService.apiBase}/login`;
 
         self = this;
     }
 
     request(config) {
-        // var canceller;
-        // if (config.url.search(self.configService.apiBase) !== -1 && self.authService.isAuthenticated()) {
-        //     config.headers.Authorization = `Token ${self.authService.getCredentials().token}`;
-        // } else if (config.url.search(self.configService.apiBase) !== -1 && config.url !== self.API_LOGIN_URL) {
-        //     canceller = self.$q.defer();
-        //     config.timeout = canceller.promise;
-        //     canceller.resolve(`Cancelled request to ${config.url} because we do not have credentials`);
-        //     self.authService.cleanCredentials();
-        //     self.$location.url('/login');
-        // }
+        var canceller,
+            urlCheck = config.url.search(self.configService.apiBase) !== -1;
+
+        if (self.authService.isAuthenticated()) {
+            config.headers.Authorization = `Token ${self.authService.getCredentials().token}`;
+        } else if (urlCheck && config.url !== self.API_LOGIN_URL) {
+            canceller = self.$q.defer();
+            config.timeout = canceller.promise;
+            canceller.resolve(`Cancelled request to ${config.url} because we do not have credentials`);
+            self.authService.cleanCredentials();
+            self.$location.url('/login');
+        }
         return config;
     }
 
     requestError(config) {
-        console.log("httpInterceptor -> requestError", config);
+        // console.log("httpInterceptor -> requestError");
         return config;
     }
 
     response(res) {
-        console.log("httpInterceptor -> response", res);
+        // console.log("httpInterceptor -> response");
         return res;
     }
 
     responseError(rejection) {
-        // if (rejection.config.url.search(self.configService.apiBase) !== -1 && rejection.status === 401) {
-        //     // TODO: redirect parameter for login
-        //     self.authService.cleanCredentials();
-        //     self.$location.url('/login');
-        // }
+        if (rejection.config.url.search(self.configService.apiBase) !== -1 && rejection.status === 401) {
+            // TODO: redirect parameter for login
+            self.authService.cleanCredentials();
+            self.$location.url('/login');
+        }
         return self.$q.reject(rejection);
     }
 

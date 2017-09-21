@@ -3,10 +3,8 @@ import substationComponent from './substation.component';
 let substationModule = angular.module('substation', [
         'ui.router'
     ])
-    .config(($stateProvider, $urlRouterProvider) => {
-        // "ngInject";
-
-        $urlRouterProvider.otherwise('/');
+    .config(($stateProvider) => {
+        "ngInject";
 
         $stateProvider
             .state('substation', {

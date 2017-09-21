@@ -1,4 +1,5 @@
-import Home from './home/home';
+import Dashboard from './dashboard/dashboard';
+import Login from './login/login';
 import About from './about/about';
 import Activity from './activity/activity';
 import Target from './target/target';
@@ -8,7 +9,8 @@ import Risk from './risk/risk';
 import Substation from './substation/substation';
 
 let componentModule = angular.module('app.components', [
-        Home,
+        Dashboard,
+        Login,
         About,
         Activity,
         Target,

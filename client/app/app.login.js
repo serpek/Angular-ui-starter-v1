@@ -1,48 +1,48 @@
 'use strict';
 
 class LoginService {
-    constructor($http, $q, $state, ConfigService, AuthService) {
+    constructor($http, $q, $state, ConfigService, AuthService, $location) {
         this.$http = $http;
         this.$q = $q;
         this.$state = $state;
+        this.$location = $location;
         this.configService = ConfigService;
         this.authService = AuthService;
 
-        if (AuthService.isAuthenticated() && ($state.current.name === 'home' || $state.current.name === 'login')) {
-            $state.go('home');
-
-            console.log("isAuthenticated");
+        if (AuthService.isAuthenticated() &&
+            ($state.current.name === 'dashboard' || $state.current.name === 'login')) {
+            $state.go('dashboard');
         }
 
-        if (!AuthService.isAuthenticated() && $state.current.name !== 'home' && $state.current.name !== 'login') {
+        if (!AuthService.isAuthenticated() && $state.current.name !== 'dashboard' && $state.current.name !== 'login') {
             $state.go('login');
-
-            console.log("not Authenticated");
         }
     }
 
-    login(username, password) {
+    login(username, password, tokenkey) {
         /*jshint camelcase: false */
         this.authService.cleanCredentials();
-        var xhr = this.$http.get(`${this.configService.apiBase}`);
-        xhr.success(data => {
-            this.authService.setCredentials(data.token);
-            this.signalsService.emit('renooit:login', username);
+        var xhr = this.$http.post(`${this.configService.apiBase}/login`, {
+            email: username,
+            password: password,
+            token: tokenkey
         });
-        xhr.catch(error => this.$q.reject(error.data.non_field_errors[0]));
+        xhr.then(res => {
+            this.authService.setCredentials(res.data.token);
+        });
+        xhr.catch(err => {
+            this.$q.reject(err);
+        });
         return xhr;
     }
 
     logout() {
-        return this.$http.get(`${this.configService.apiBase}/logout/`)
-            .success(() => {
-                this.authService.cleanCredentials();
-                this.$state.go('login');
-            })
-            .catch(error => this.$q.reject(error.data));
+        this.authService.cleanCredentials();
+        this.$location.url("http://mobilease.com");
+        //this.$state.go('login');
     }
 }
 
-LoginService.$inject = ['$http', '$q', '$state', 'ConfigService', 'AuthService'];
+LoginService.$inject = ['$http', '$q', '$state', 'ConfigService', 'AuthService', '$location'];
 
 export default LoginService;

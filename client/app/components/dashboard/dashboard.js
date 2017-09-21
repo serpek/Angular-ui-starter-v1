@@ -1,20 +1,23 @@
-import homeComponent from './home.component';
+import dashboardComponent from './dashboard.component';
 
 // let hash = '?' + Date.now();
 
-let homeModule = angular.module('home', [
+let dashboardModule = angular.module('dashboard', [
         'ui.router'
     ])
-    .config(($stateProvider, $urlRouterProvider) => {
-        // "ngInject";
-
-        $urlRouterProvider.otherwise('/');
+    .config(($stateProvider) => {
+        "ngInject";
 
         $stateProvider
-            .state('home', {
+            .state('dashboard', {
                 url: '/',
-                component: 'home',
+                component: 'dashboard',
                 resolve: {
+                    auth: () => {
+                        //console.log("e: ", dashboardComponent);
+                        return false;
+                    }
+
                     // lazyLoad: function($q,$ocLazyLoad) {
                     //     return $ocLazyLoad.load(['app/assets/js/fusioncharts/fusioncharts.js']);
                     // }
@@ -22,10 +25,10 @@ let homeModule = angular.module('home', [
             });
 
     })
-    .component('home', homeComponent)
+    .component('dashboard', dashboardComponent)
     .name;
 
-export default homeModule;
+export default dashboardModule;
 
 /*.config(['$stateProvider', '$urlRouterProvider', '$ocLazyLoadProvider', function($stateProvider, $urlRouterProvider, $ocLazyLoadProvider) {
     // "ngInject";

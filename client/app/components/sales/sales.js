@@ -3,10 +3,8 @@ import salesComponent from './sales.component';
 let salesModule = angular.module('sales', [
         'ui.router'
     ])
-    .config(($stateProvider, $urlRouterProvider) => {
-        // "ngInject";
-
-        $urlRouterProvider.otherwise('/');
+    .config(($stateProvider) => {
+        "ngInject";
 
         $stateProvider
             .state('sales', {
