@@ -23,12 +23,17 @@ let resolveToComponents = (glob = '') => {
     return path.join(root, 'app/components', glob); // app/components/{glob}
 };
 
+let resolveToModels = (glob = '') => {
+    return path.join(root, 'app/models', glob); // app/models/{glob}
+};
+
 // map of all paths
 let paths = {
     output: root,
     blankTemplates: {
         page: path.join(__dirname, 'generator', 'page/**/*.**'),
         component: path.join(__dirname, 'generator', 'component/**/*.**')
+        model: path.join(__dirname, 'generator', 'model/**/*.**')
     },
     dest: path.join(__dirname, 'dist'),
     publicPath: '/'
@@ -99,6 +104,26 @@ gulp.task('component', () => {
     }    
 
     gulp.src(templatePath)
+    return gulp.src(paths.blankTemplates.component)
+        .pipe(template({
+            name: name,
+            upCaseName: cap(name)
+        }))
+        .pipe(rename((path) => {
+            path.basename = path.basename.replace('temp', name);
+        }))
+        .pipe(gulp.dest(destPath));
+});
+
+gulp.task('model', () => {
+    const cap = (val) => {
+        return val.charAt(0).toUpperCase() + val.slice(1);
+    };
+    const name = yargs.argv.name;
+    const parentPath = yargs.argv.parent || '';
+    const destPath = path.join(resolveToModels(), parentPath);
+
+    return gulp.src(paths.blankTemplates.model)
         .pipe(template({
             name: name,
             upCaseName: cap(_.camelCase(name)),

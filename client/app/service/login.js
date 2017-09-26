@@ -1,12 +1,12 @@
 'use strict';
 
 class LoginService {
-    constructor($http, $q, $state, ConfigService, AuthService, $location) {
+    constructor($http, $q, $state, Config, AuthService, $location) {
         this.$http = $http;
         this.$q = $q;
         this.$state = $state;
         this.$location = $location;
-        this.configService = ConfigService;
+        this.Config = Config;
         this.authService = AuthService;
 
         if (AuthService.isAuthenticated() &&
@@ -22,7 +22,7 @@ class LoginService {
     login(username, password, tokenkey) {
         /*jshint camelcase: false */
         this.authService.cleanCredentials();
-        var xhr = this.$http.post(`${this.configService.apiBase}/login`, {
+        var xhr = this.$http.post(`${this.Config.apiBase}/login`, {
             email: username,
             password: password,
             token: tokenkey
@@ -43,6 +43,6 @@ class LoginService {
     }
 }
 
-LoginService.$inject = ['$http', '$q', '$state', 'ConfigService', 'AuthService', '$location'];
+LoginService.$inject = ['$http', '$q', '$state', 'Config', 'AuthService', '$location'];
 
 export default LoginService;
