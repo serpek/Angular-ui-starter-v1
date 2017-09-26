@@ -1,15 +1,16 @@
 import "./assets/css/bundle.scss";
 
+import Config from './app.config';
 import Common from './common/common';
 import Components from './components/components';
 import AppComponent from './app.component';
 import httpInterceptorFactory from './interceptor';
-import AuthService from './app.auth';
-import ConfigService from './app.config';
-import LoginService from './app.login';
+import AuthService from './service/authentication';
+import LoginService from './service/login';
 
 angular.module('app', [
         'ngSanitize',
+        'ngAnimate',
         'ui.router',
         'ui.router.state.events',
         'ng-fusioncharts',
@@ -19,15 +20,15 @@ angular.module('app', [
         Common,
         Components
     ])
-    .constant("CONFIG", {
-        "contextRoot": "/",
-        "softwareCode": "APPSTARTER",
-        "idleTime": 14 * 60
-    })
+    // .constant("CONFIG", {
+    //     "contextRoot": "/",
+    //     "softwareCode": "APPSTARTER",
+    //     "idleTime": 14 * 60
+    // })
     .factory('httpInterceptor', httpInterceptorFactory)
     .service('AuthService', AuthService)
     .service('LoginService', LoginService)
-    .value('ConfigService', ConfigService)
+    .value('Config', Config)
     .config(($urlRouterProvider, $locationProvider, $stateProvider, $httpProvider) => {
         "ngInject";
 

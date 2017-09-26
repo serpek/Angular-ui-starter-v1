@@ -5,10 +5,23 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const ProgressBarPlugin = require('progress-bar-webpack-plugin');
 
 const config = require("./webpack.config");
+
+//GLOBAL
+let global = {
+    name: "global",
+    entry: ["jszip/dist/jszip"],
+    output: {
+        path: path.join(__dirname, config.outputPath),
+        publicPath: '/',
+        filename: "js/global.js"
+    },
+    plugins: []
+};
+
 // VENDOR
 let vendor = {
     name: "vendor",
-    entry: ["angular", "jquery", "oclazyload", "bootstrap", "@uirouter/angularjs", '@uirouter/angularjs/lib/legacy/stateEvents.js', 'angular-sanitize', 'angular-block-ui'],
+    entry: ["angular", "jquery", "oclazyload", "bootstrap", "@uirouter/angularjs", '@uirouter/angularjs/lib/legacy/stateEvents.js', 'angular-sanitize', 'angular-block-ui', 'angular-animate'],
     output: {
         path: path.join(__dirname, config.outputPath),
         publicPath: '/',
@@ -26,7 +39,7 @@ let vendor = {
 // PLUGINS
 let plugins = {
     name: "plugins",
-    entry: ["devextreme/dist/js/dx.all", "fusioncharts", path.join(__dirname, '/libs/fusioncharts/angular-fusioncharts.min.js')],
+    entry: ["jszip", "devextreme/dist/js/dx.all", "fusioncharts", path.join(__dirname, '/libs/fusioncharts/angular-fusioncharts.min.js')],
     output: {
         path: path.join(__dirname, config.outputPath),
         publicPath: '/',
@@ -64,4 +77,4 @@ let app = {
     ]
 };
 
-module.exports = [vendor, plugins, app];
+module.exports = [global, vendor, plugins, app];
