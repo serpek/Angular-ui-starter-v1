@@ -3,11 +3,9 @@ import "./assets/css/bundle.scss";
 import Config from './app.config';
 import Common from './common/common';
 import Components from './components/components';
+import Services from './services/services';
 import AppComponent from './app.component';
 import httpInterceptorFactory from './interceptor';
-import PermissionService from './service/permission';
-import AuthService from './service/authentication';
-import LoginService from './service/login';
 
 angular.module('app', [
         'ngSanitize',
@@ -19,7 +17,8 @@ angular.module('app', [
         'blockUI',
         'oc.lazyLoad',
         Common,
-        Components
+        Components,
+        Services
     ])
     // .constant("CONFIG", {
     //     "contextRoot": "/",
@@ -27,9 +26,6 @@ angular.module('app', [
     //     "idleTime": 14 * 60
     // })
     .factory('httpInterceptor', httpInterceptorFactory)
-    .service('AuthService', AuthService)
-    .service('LoginService', LoginService)
-    .service('PermissionService', PermissionService)
     .value('Config', Config)
     .config(($urlRouterProvider, $locationProvider, $stateProvider, $httpProvider) => {
         "ngInject";
