@@ -5,7 +5,7 @@ import Common from './common/common';
 import Components from './components/components';
 import AppComponent from './app.component';
 import httpInterceptorFactory from './interceptor';
-import PermissionService from './app.permission';
+import PermissionService from './service/permission';
 import AuthService from './service/authentication';
 import LoginService from './service/login';
 
