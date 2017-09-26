@@ -1,6 +1,6 @@
 class RiskController {
   constructor() {
-    this.name = 'risk';
+    this.name = 'Risk Page';
   }
 }
 

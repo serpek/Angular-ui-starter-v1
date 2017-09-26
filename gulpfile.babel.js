@@ -8,7 +8,7 @@ import rename from 'gulp-rename';
 import template from 'gulp-template';
 import fs from 'fs';
 import yargs from 'yargs';
-import lodash from 'lodash';
+import _ from 'lodash';
 import gutil from 'gulp-util';
 import serve from 'browser-sync';
 import del from 'del';
@@ -26,7 +26,10 @@ let resolveToComponents = (glob = '') => {
 // map of all paths
 let paths = {
     output: root,
-    blankTemplates: path.join(__dirname, 'generator', 'component/**/*.**'),
+    blankTemplates: {
+        page: path.join(__dirname, 'generator', 'page/**/*.**'),
+        component: path.join(__dirname, 'generator', 'component/**/*.**')
+    },
     dest: path.join(__dirname, 'dist'),
     publicPath: '/'
 };
@@ -61,7 +64,6 @@ gulp.task('serve', ['clean'], (cb) => {
         server: {
             baseDir: root
         },
-        cache: true,
         devtool: "source-map",
         stats: "errors-only",
         middleware: [
@@ -89,11 +91,18 @@ gulp.task('component', () => {
     const name = yargs.argv.name;
     const parentPath = yargs.argv.parent || '';
     const destPath = path.join(resolveToComponents(), parentPath, name);
+    let templatePath = paths.blankTemplates.page;
 
-    return gulp.src(paths.blankTemplates)
+    if (!yargs.argv.page) {
+        templatePath = paths.blankTemplates.component;
+        console.log("#### ADD PAGE: import "+ cap(_.camelCase(name)) +" from './" + name + "/" + name + "';");
+    }    
+
+    gulp.src(templatePath)
         .pipe(template({
             name: name,
-            upCaseName: cap(name)
+            upCaseName: cap(_.camelCase(name)),
+            camelCaseName: _.camelCase(name)
         }))
         .pipe(rename((path) => {
             path.basename = path.basename.replace('temp', name);

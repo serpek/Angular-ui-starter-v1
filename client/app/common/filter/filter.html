@@ -1,0 +1,70 @@
+<div>
+    <h3>{{ $ctrl.name }} => <!-- {{$ctrl.options}} --></h3>
+
+    {{$ctrl.permission}}
+    {{$ctrl.permission.group}}
+    {{$ctrl.permission.channel}}
+
+    <!-- #### SATIŞ #### -->
+    <div ng-if="$ctrl.permission.group == 'sales'">
+
+        <!-- MÜŞTERİ TEMSİLCİSİ -->
+        <div ng-if="$ctrl.permission.channel == 'customerAgent'">
+            MÜŞTERİ TEMSİLCİSİ
+        </div>
+        <!-- MÜŞTERİ TEMSİLCİSİ -->
+
+        <!-- BÖLGE MÜDÜRÜ -->
+        <div ng-if="$ctrl.permission.channel == 'regionManager'">
+            BÖLGE MÜDÜRÜ
+        </div>
+        <!-- BÖLGE MÜDÜRÜ -->
+        
+        <!-- İŞ GELİŞTİRME VE GMY -->
+        <div ng-if="$ctrl.permission.channel == 'generalManagerAssistant'">
+            İŞ GELİŞTİRME VE GMY
+        </div>
+        <!-- İŞ GELİŞTİRME VE GMY -->
+
+        <!-- GENEL MÜDÜR -->
+        <div ng-if="$ctrl.permission.channel == 'generalManager'">
+            GENEL MÜDÜR
+        </div>
+        <!-- GENEL MÜDÜR -->
+
+    </div>
+    <!-- #### SATIŞ #### -->
+
+    <!-- #### BANKA #### -->
+    <div ng-if="$ctrl.permission.group == 'bank'">
+        
+        <!-- MÜŞTERİ TEMSİLCİSİ -->
+        <div ng-if="$ctrl.permission.channel == 'customerAgent'">
+            MÜŞTERİ TEMSİLCİSİ
+        </div>
+        <!-- MÜŞTERİ TEMSİLCİSİ -->
+
+        <!-- BÖLGE MÜDÜRÜ -->
+        <div ng-if="$ctrl.permission.channel == 'regionManager'">
+            BÖLGE MÜDÜRÜ
+        </div>
+        <!-- BÖLGE MÜDÜRÜ -->
+        
+        <!-- İŞ GELİŞTİRME VE GMY -->
+        <div ng-if="$ctrl.permission.channel == 'generalManagerAssistant'">
+            İŞ GELİŞTİRME VE GMY
+        </div>
+        <!-- İŞ GELİŞTİRME VE GMY -->
+
+        <!-- GENEL MÜDÜR -->
+        <div ng-if="$ctrl.permission.channel == 'generalManager'">
+            GENEL MÜDÜR
+        </div>
+        <!-- GENEL MÜDÜR -->
+
+    </div>
+    <!-- #### SATIŞ #### -->
+
+
+
+</div>

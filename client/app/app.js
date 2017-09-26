@@ -7,6 +7,7 @@ import httpInterceptorFactory from './interceptor';
 import AuthService from './app.auth';
 import ConfigService from './app.config';
 import LoginService from './app.login';
+import PermissionService from './app.permission';
 
 angular.module('app', [
         'ngSanitize',
@@ -27,6 +28,7 @@ angular.module('app', [
     .factory('httpInterceptor', httpInterceptorFactory)
     .service('AuthService', AuthService)
     .service('LoginService', LoginService)
+    .service('PermissionService', PermissionService)
     .value('ConfigService', ConfigService)
     .config(($urlRouterProvider, $locationProvider, $stateProvider, $httpProvider) => {
         "ngInject";

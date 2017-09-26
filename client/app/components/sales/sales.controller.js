@@ -1,6 +1,6 @@
 class SalesController {
   constructor() {
-    this.name = 'sales';
+    this.name = 'Sales Page';
   }
 }
 

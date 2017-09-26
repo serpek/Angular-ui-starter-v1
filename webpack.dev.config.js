@@ -19,7 +19,7 @@ let vendor = {
             $: 'jquery',
             jQuery: 'jquery',
             'window.jQuery': 'jquery'
-        })
+        })     
     ]
 };
 
@@ -37,7 +37,7 @@ let plugins = {
             $: 'jquery',
             jQuery: 'jquery',
             'window.jQuery': 'jquery'
-        })
+        })      
     ]
 };
 
@@ -60,7 +60,7 @@ let app = {
             jQuery: 'jquery',
             'window.jQuery': 'jquery'
         }),
-        new ExtractTextPlugin("css/[name].min.css", { allChunks: true })
+        new ExtractTextPlugin("css/[name].min.css", { allChunks: true })      
     ]
 };
 

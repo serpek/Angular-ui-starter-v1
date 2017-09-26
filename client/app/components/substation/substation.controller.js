@@ -1,6 +1,6 @@
 class SubstationController {
   constructor() {
-    this.name = 'substation';
+    this.name = 'Substation Page';
   }
 }
 

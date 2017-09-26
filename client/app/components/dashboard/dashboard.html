@@ -1,14 +1,31 @@
 <main>
     <div class="container">
         <div class="row">
-            <div class="col-md-6">
-                <p>Found in {{ name }}.html</p>
 
+            <div class="col-md-12">
+
+                <filter options="$ctrl.filterOptions"></filter>
+                <hr>
+                <target-actualization-graphic></target-actualization-graphic>
+                <hr>
+                <risk-management></risk-management>
+                <hr>
+                <activity-graphic></activity-graphic>
+                <hr>
+                <customer-portfolio></customer-portfolio>
+                <hr>
+                <mobilease-use-ratio></mobilease-use-ratio>
+                                
+            </div>
+
+
+            <!-- <div class="col-md-6">
+                <p>Found in {{ name }}.html</p>
                 <button ng-click="$ctrl.getCredential()">Get Credential</button>
             </div>
             <div class="col-md-6">
                 <div id="gridContainer" dx-data-grid="dataGridOptions"></div>
-            </div>
+            </div> -->
         </div>
     </div>
 </main>

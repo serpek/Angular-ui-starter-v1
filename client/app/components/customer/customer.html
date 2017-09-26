@@ -1,7 +1,19 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <h1>{{ $ctrl.name }}</h1>
+            <filter options="$ctrl.name"></filter>
+            <hr>
+            <credit-process></credit-process>
+            <hr>
+            <refund-from-credits></refund-from-credits>
+            <hr>
+            <contractual-process></contractual-process>
+            <hr>
+            <procurement-process></procurement-process>
+            <hr>
+            <general-status-table></general-status-table>
+            <hr>
+            <brand-based-report></brand-based-report>
         </div>
     </div>
 </div>

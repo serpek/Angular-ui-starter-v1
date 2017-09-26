@@ -1,6 +1,6 @@
 class CustomerController {
   constructor() {
-    this.name = 'customer';
+    this.name = 'Customer Page';
   }
 }
 

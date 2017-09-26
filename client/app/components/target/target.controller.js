@@ -1,6 +1,6 @@
 class TargetController {
   constructor() {
-    this.name = 'target';
+    this.name = 'Target Page';
   }
 }
 

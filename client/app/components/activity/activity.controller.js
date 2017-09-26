@@ -1,6 +1,6 @@
 class ActivityController {
   constructor() {
-    this.name = 'activity';
+    this.name = 'Activity Page';
   }
 }
 

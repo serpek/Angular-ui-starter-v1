@@ -3,7 +3,7 @@ import Singleton from '../../models/Singleton';
 class DashboardController {
 
     constructor($scope, $http, $q, AuthService) {
-        this.name = "Deneme";
+        this.name = "Dashboard Page";
 
         this.$scope = $scope;
         this.$http = $http;
@@ -12,6 +12,13 @@ class DashboardController {
         this.AuthService = AuthService;
         // let self;
         // self = this;
+
+        // this.filterOptions = {
+        //     input: true,
+        //     selectbox: true
+        // };
+
+
 
         var orders = new DevExpress.data.CustomStore({
             load: function(loadOptions) {
@@ -73,6 +80,9 @@ class DashboardController {
             ]
         };
         console.log("getCredentials: =>  1", this.AuthService.getCredentials());
+
+
+
     }
 
     getCredential() {
