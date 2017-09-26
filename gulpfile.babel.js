@@ -32,7 +32,7 @@ let paths = {
     output: root,
     blankTemplates: {
         page: path.join(__dirname, 'generator', 'page/**/*.**'),
-        component: path.join(__dirname, 'generator', 'component/**/*.**')
+        component: path.join(__dirname, 'generator', 'component/**/*.**'),
         model: path.join(__dirname, 'generator', 'model/**/*.**')
     },
     dest: path.join(__dirname, 'dist'),
@@ -100,8 +100,8 @@ gulp.task('component', () => {
 
     if (!yargs.argv.page) {
         templatePath = paths.blankTemplates.component;
-        console.log("#### ADD PAGE: import "+ cap(_.camelCase(name)) +" from './" + name + "/" + name + "';");
-    }    
+        console.log("#### ADD PAGE: import " + cap(_.camelCase(name)) + " from './" + name + "/" + name + "';");
+    }
 
     gulp.src(templatePath)
     return gulp.src(paths.blankTemplates.component)
