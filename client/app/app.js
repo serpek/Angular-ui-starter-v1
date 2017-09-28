@@ -12,10 +12,13 @@ angular.module('app', [
         'ngAnimate',
         'ui.router',
         'ui.router.state.events',
+        'ui.bootstrap',
         'ng-fusioncharts',
         'dx',
         'blockUI',
         'oc.lazyLoad',
+        'ngTouch',
+        'mega-menu',
         Common,
         Components,
         Services
@@ -60,7 +63,7 @@ angular.module('app', [
         // Block the user interface
         // blockUI.start();
 
-        // simulate long page loading
+        // // simulate long page loading
         // $timeout(function() {
 
         //     // turn "off" the flag

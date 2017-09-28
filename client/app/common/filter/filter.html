@@ -1,9 +1,73 @@
-<div>
-    <h3>{{ $ctrl.name }} => <!-- {{$ctrl.options}} --></h3>
+<nav class="navbar yamm navbar-default" role="navigation">
+    <div class="container-fuild">
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li class="dropdown" uib-dropdown auto-close="outsideClick">
+                    <a class="dropdown-toggle" uib-dropdown-toggle toggle-event="click" href="#">List <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <div class="yamm-content">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="dx-searchbar">
+                                            <div dx-text-box="searchOptions"></div>
+                                        </div>
+                                        <div class="list-container">
+                                            <div dx-list="listOptions"></div>
+                                            <div class="selected-data">
+                                                <span class="caption">Selected IDs:</span>
+                                                <span>{{selectedItemKeys.join(', ')}}</span>
+                                            </div>
+                                        </div>
 
-    {{$ctrl.permission}}
-    {{$ctrl.permission.group}}
-    {{$ctrl.permission.channel}}
+                                    </div>
+
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown" uib-dropdown auto-close="outsideClick">
+                    <a class="dropdown-toggle" uib-dropdown-toggle toggle-event="click" href="#">Accordion<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <div class="yamm-content">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <uib-accordion>
+                                            <div uib-accordion-group class="panel-default" heading="Collapsible Group Item #1" is-open="true">
+                                                Ut consectetur ullamcorper purus a rutrum. Etiam dui nisi, hendrerit feugiat scelerisque et, cursus eu magna.
+                                            </div>
+                                            <div uib-accordion-group class="panel-default" heading="Collapsible Group Item #2">
+                                                Nullam pretium fermentum sapien ut convallis. Suspendisse vehicula, magna non tristique tincidunt, massa nisi luctus tellus, vel laoreet sem lectus ut nibh.
+                                            </div>
+                                            <div uib-accordion-group class="panel-default" heading="Collapsible Group Item #3">
+                                                Praesent leo quam, faucibus at facilisis id, rhoncus sit amet metus. Sed vitae ipsum non nibh mattis congue eget id augue.
+                                            </div>
+                                        </uib-accordion>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown" uib-dropdown>
+                    <a class="dropdown-toggle" uib-dropdown-toggle toggle-event="click" href="#">Classic<b class="caret"></b></a>
+                    <ul role="menu" class="dropdown-menu">
+                        <li><a tabindex="-1" href="#"> Action </a></li>
+                        <li><a tabindex="-1" href="#"> Another action </a></li>
+                        <li><a tabindex="-1" href="#"> Something else here </a></li>
+                        <li class="divider"></li>
+                        <li><a tabindex="-1" href="#"> Separated link </a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div>
+    <!-- <h3>{{ $ctrl.name }} => {{$ctrl.options}} </h3> -->{{$ctrl.permission}} {{$ctrl.permission.group}} {{$ctrl.permission.channel}}
 
     <!-- #### SATIŞ #### -->
     <div ng-if="$ctrl.permission.group == 'sales'">
@@ -19,7 +83,7 @@
             BÖLGE MÜDÜRÜ
         </div>
         <!-- BÖLGE MÜDÜRÜ -->
-        
+
         <!-- İŞ GELİŞTİRME VE GMY -->
         <div ng-if="$ctrl.permission.channel == 'generalManagerAssistant'">
             İŞ GELİŞTİRME VE GMY
@@ -37,7 +101,7 @@
 
     <!-- #### BANKA #### -->
     <div ng-if="$ctrl.permission.group == 'bank'">
-        
+
         <!-- MÜŞTERİ TEMSİLCİSİ -->
         <div ng-if="$ctrl.permission.channel == 'customerAgent'">
             MÜŞTERİ TEMSİLCİSİ
@@ -49,7 +113,7 @@
             BÖLGE MÜDÜRÜ
         </div>
         <!-- BÖLGE MÜDÜRÜ -->
-        
+
         <!-- İŞ GELİŞTİRME VE GMY -->
         <div ng-if="$ctrl.permission.channel == 'generalManagerAssistant'">
             İŞ GELİŞTİRME VE GMY

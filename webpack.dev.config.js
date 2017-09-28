@@ -1,8 +1,6 @@
 const webpack = require("webpack");
 const path = require("path");
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
-const ProgressBarPlugin = require('progress-bar-webpack-plugin');
 
 const config = require("./webpack.config");
 
@@ -21,7 +19,19 @@ let global = {
 // VENDOR
 let vendor = {
     name: "vendor",
-    entry: ["angular", "jquery", "oclazyload", "bootstrap", "@uirouter/angularjs", '@uirouter/angularjs/lib/legacy/stateEvents.js', 'angular-sanitize', 'angular-block-ui', 'angular-animate'],
+    entry: [
+        "angular",
+        "jquery",
+        "oclazyload",
+        "bootstrap",
+        "@uirouter/angularjs",
+        '@uirouter/angularjs/lib/legacy/stateEvents.js',
+        'angular-sanitize',
+        'angular-block-ui',
+        'angular-animate',
+        'angular-touch',
+        'angular-ui-bootstrap'
+    ],
     output: {
         path: path.join(__dirname, config.outputPath),
         publicPath: '/',
@@ -32,14 +42,19 @@ let vendor = {
             $: 'jquery',
             jQuery: 'jquery',
             'window.jQuery': 'jquery'
-        })     
+        })
     ]
 };
 
 // PLUGINS
 let plugins = {
     name: "plugins",
-    entry: ["jszip", "devextreme/dist/js/dx.all", "fusioncharts", path.join(__dirname, '/libs/fusioncharts/angular-fusioncharts.min.js')],
+    entry: [
+        "jszip",
+        "devextreme/dist/js/dx.all", "fusioncharts",
+        path.join(__dirname, '/libs/fusioncharts/angular-fusioncharts.min.js'),
+        path.join(__dirname, '/libs/angular-mega-menu.js')
+    ],
     output: {
         path: path.join(__dirname, config.outputPath),
         publicPath: '/',
@@ -50,7 +65,7 @@ let plugins = {
             $: 'jquery',
             jQuery: 'jquery',
             'window.jQuery': 'jquery'
-        })      
+        })
     ]
 };
 
@@ -73,7 +88,7 @@ let app = {
             jQuery: 'jquery',
             'window.jQuery': 'jquery'
         }),
-        new ExtractTextPlugin("css/[name].min.css", { allChunks: true })      
+        new ExtractTextPlugin("css/[name].min.css", { allChunks: true })
     ]
 };
 
