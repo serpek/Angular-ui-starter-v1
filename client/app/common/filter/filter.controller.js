@@ -1,7 +1,10 @@
 class FilterController {
-    constructor($http, $scope, PermissionService) {
+    constructor($http, $scope, PermissionService, FilterService, FilterModel) {
         this.name = 'filter';
         this.permission = PermissionService.getPermission();
+
+        this.FilterService = FilterService;
+
         console.log("#### filter options => ", $scope.$ctrl.options);
 
         //console.log(this.permissionService.setPermission());
@@ -198,11 +201,15 @@ class FilterController {
                 dataSource.load();
             }
         };
+
+        var filter = new FilterModel({ MT: "asasda" });
+
+        this.FilterService.setData(filter);
     }
 
 
 }
 
-FilterController.$inject = ['$http', '$scope', 'PermissionService'];
+FilterController.$inject = ['$http', '$scope', 'PermissionService', 'FilterService', 'FilterModel'];
 
 export default FilterController;

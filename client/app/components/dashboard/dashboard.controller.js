@@ -2,14 +2,16 @@ import Singleton from '../../models/Singleton';
 
 class DashboardController {
 
-    constructor($scope, $http, $q, AuthService) {
+    constructor($scope, $rootScope, $http, $q, AuthService, FilterService) {
         this.name = "Dashboard Page";
 
         this.$scope = $scope;
+        this.$rootScope = $rootScope;
         this.$http = $http;
         this.$q = $q;
 
         this.AuthService = AuthService;
+        this.FilterService = FilterService;
         // let self;
         // self = this;
 
@@ -17,7 +19,6 @@ class DashboardController {
         //     input: true,
         //     selectbox: true
         // };
-
 
 
         var orders = new DevExpress.data.CustomStore({
@@ -214,18 +215,17 @@ class DashboardController {
                 chartDataSource.load();
             }
         };
-        console.log("getCredentials: =>  1", this.AuthService.getCredentials());
-
 
 
     }
 
     getCredential() {
 
-        console.log("getCredentials: =>  2", this.AuthService.getCredentials());
+        this.FilterService.setData({ "a": "b" });
+        //console.log("getCredentials: =>  2", this.AuthService.getCredentials());
     }
 }
 
-DashboardController.$inject = ['$scope', '$http', '$q', 'AuthService'];
+DashboardController.$inject = ['$scope', '$rootScope', '$http', '$q', 'AuthService', 'FilterService'];
 
 export default DashboardController;
