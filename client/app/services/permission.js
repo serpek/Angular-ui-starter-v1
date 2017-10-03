@@ -9,18 +9,14 @@ class PermissionService {
     }
 
     setPermission() {
-
         this.permissions = {
             group: "sales",
             channel: "customerAgent"
         }
-
     }
 
     getPermission() {
-
         return this.permissions;
-
     }
 
 }

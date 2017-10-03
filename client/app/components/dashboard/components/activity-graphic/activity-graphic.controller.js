@@ -8,12 +8,12 @@ class ActivityGraphicController {
         self.$scope = $scope;
         self.FilterService = FilterService;
 
-        // var filter = new FilterModel({ MT: "b", BM: "c" });
-        // console.log("filter: ", filter);
-        self.FilterService.subscribe(self.filter);
+        var filter = new FilterModel({ MT: "b", BM: "c" });
+        console.log("filter: ", filter);
+        self.FilterService.subscribe(self.filterCallback);
     }
 
-    filter() {
+    filterCallback() {
         var a = self.FilterService.getData();
         console.log("asdsd ", a);
     }

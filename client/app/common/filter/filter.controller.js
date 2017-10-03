@@ -1,5 +1,5 @@
 class FilterController {
-    constructor($http, $scope, PermissionService, FilterService, FilterModel) {
+    constructor($http, $scope, PermissionService, FilterService) {
         this.name = 'filter';
         this.permission = PermissionService.getPermission();
 
@@ -202,14 +202,14 @@ class FilterController {
             }
         };
 
-        var filter = new FilterModel({ MT: "asasda" });
+        // var filter = new FilterModel({ MT: "asasda" });
 
-        this.FilterService.setData(filter);
+        this.FilterService.setData({ MT: "asasda" });
     }
 
 
 }
 
-FilterController.$inject = ['$http', '$scope', 'PermissionService', 'FilterService', 'FilterModel'];
+FilterController.$inject = ['$http', '$scope', 'PermissionService', 'FilterService'];
 
 export default FilterController;
