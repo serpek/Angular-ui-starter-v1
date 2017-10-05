@@ -5,9 +5,6 @@ class FilterController {
 
         this.FilterService = FilterService;
 
-        console.log("#### filter options => ", $scope.$ctrl.options);
-
-        //console.log(this.permissionService.setPermission());
         var products = [{
             "ID": 1,
             "Name": "HD Video Player",
@@ -206,7 +203,6 @@ class FilterController {
 
         this.FilterService.setData({ MT: "asasda" });
     }
-
 
 }
 

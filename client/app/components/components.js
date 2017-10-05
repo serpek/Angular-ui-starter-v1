@@ -7,6 +7,7 @@ import Sales from './sales/sales';
 import Customer from './customer/customer';
 import Risk from './risk/risk';
 import Substation from './substation/substation';
+import Charts from './charts/charts';
 
 
 import DashboardComponents from './dashboard/components/dashboard.components';
@@ -33,7 +34,8 @@ let componentModule = angular.module('app.components', [
         SalesComponents,
         CustomerComponents,
         RiskComponents,
-        SubstationComponents    
+        SubstationComponents,
+        Charts
     ])
     .name;
 

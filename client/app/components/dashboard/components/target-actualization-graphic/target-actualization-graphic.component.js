@@ -3,7 +3,9 @@ import controller from './target-actualization-graphic.controller';
 import './target-actualization-graphic.scss';
 
 let targetActualizationGraphicComponent = {
-  bindings: {},
+  bindings: {
+    params: '='
+  },
   template,
   controller
 };

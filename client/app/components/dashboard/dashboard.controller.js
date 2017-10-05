@@ -9,16 +9,8 @@ class DashboardController {
         this.$rootScope = $rootScope;
         this.$http = $http;
         this.$q = $q;
-
         this.AuthService = AuthService;
         this.FilterService = FilterService;
-        // let self;
-        // self = this;
-
-        // this.filterOptions = {
-        //     input: true,
-        //     selectbox: true
-        // };
 
 
         var orders = new DevExpress.data.CustomStore({
@@ -113,7 +105,6 @@ class DashboardController {
             expand: "DayItems",
             filter: ["Id", "=", 1]
         });
-
 
         this.chartOptions = {
             dataSource: chartDataSource,

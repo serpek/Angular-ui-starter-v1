@@ -4,7 +4,7 @@ import './filter.scss';
 
 let filterComponent = {
   bindings: {
-    options: '='
+    params: '='
   },
   template,
   controller

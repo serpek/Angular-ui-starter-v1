@@ -8,7 +8,7 @@ Angularjs + Webpack 3 + Babel
 
 <b>For Pages (with stateProvider):</b> <br>
 npm run component -- --name a --page<br>
-npm run component -- --name a --parent ../components/target/components --page
+npm run component -- --name a --parent ../components/dashboard/components --page
 
 <b>For Components (without stateProvider):</b> <br>
 npm run component -- --name a<br>

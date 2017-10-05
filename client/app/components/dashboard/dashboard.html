@@ -3,10 +3,9 @@
         <div class="row">
 
             <div class="col-md-12">
-
-                <filter options="$ctrl.filterOptions"></filter>
+                <filter params="$ctrl"></filter>
                 <hr>
-                <target-actualization-graphic></target-actualization-graphic>
+                <target-actualization-graphic params="$ctrl"></target-actualization-graphic>
                 <hr>
                 <risk-management></risk-management>
                 <hr>
@@ -17,7 +16,6 @@
                 <mobilease-use-ratio></mobilease-use-ratio>
 
             </div>
-
 
             <div class="col-md-6">
                 <p>Found in {{ name }}.html</p>

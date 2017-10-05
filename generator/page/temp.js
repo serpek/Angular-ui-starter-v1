@@ -1,4 +1,4 @@
-import <%= camelCaseName %>Component from './<%= camelCaseName %>.component';
+import <%= camelCaseName %>Component from './<%= name %>.component';
 
 let <%= camelCaseName %>Module = angular.module('<%= camelCaseName %>', [
   'ui.router'
@@ -8,8 +8,8 @@ let <%= camelCaseName %>Module = angular.module('<%= camelCaseName %>', [
 
     $stateProvider
         .state('<%= name %>', {
-            url: '/',
-            component: '<%= name %>',
+            url: '/<%= name %>',
+            component: '<%= camelCaseName %>',
             resolve: {
                 //lazyLoad: function($q, $ocLazyLoad) {
                 //    return $ocLazyLoad.load(['app/assets/js/fusioncharts/fusioncharts.js']);

@@ -67,7 +67,7 @@
 </nav>
 
 <div>
-    <!-- <h3>{{ $ctrl.name }} => {{$ctrl.options}} </h3> -->{{$ctrl.permission}} {{$ctrl.permission.group}} {{$ctrl.permission.channel}}
+    <h3>{{ $ctrl.name }} =>  {{$ctrl.options}}</h3>
 
     <!-- #### SATIŞ #### -->
     <div ng-if="$ctrl.permission.group == 'sales'">
@@ -99,6 +99,7 @@
     </div>
     <!-- #### SATIŞ #### -->
 
+
     <!-- #### BANKA #### -->
     <div ng-if="$ctrl.permission.group == 'bank'">
 
@@ -128,7 +129,5 @@
 
     </div>
     <!-- #### SATIŞ #### -->
-
-
 
 </div>

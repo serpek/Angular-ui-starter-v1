@@ -99,15 +99,17 @@ gulp.task('component', () => {
     let templatePath = paths.blankTemplates.page;
 
     if (!yargs.argv.page) {
-        templatePath = paths.blankTemplates.component;
-        console.log("#### ADD PAGE: import " + cap(_.camelCase(name)) + " from './" + name + "/" + name + "';");
+        templatePath = paths.blankTemplates.component;   
     }
 
+    console.log("#### ADD PAGE: import " + cap(_.camelCase(name)) + " from './" + name + "/" + name + "';");
+
     gulp.src(templatePath)
-    return gulp.src(paths.blankTemplates.component)
+    return gulp.src(templatePath)
         .pipe(template({
             name: name,
-            upCaseName: cap(name)
+            upCaseName: cap(_.camelCase(name)), 
+            camelCaseName: _.camelCase(name) 
         }))
         .pipe(rename((path) => {
             path.basename = path.basename.replace('temp', name);
